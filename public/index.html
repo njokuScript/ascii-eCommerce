@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Products Grid</title>
+    <link rel="stylesheet" type="text/css" href="./css/main.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react-dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.24.0/babel.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>Products Grid</h1>
+
+      <p>
+        Here you're sure to find a bargain on some of the finest ascii available
+        to purchase. Be sure to peruse our selection of ascii faces in an
+        exciting range of sizes and prices.
+      </p>
+
+      <p>But first, a word from our sponsors:</p>
+      <script>
+        document.write(
+          '<img class="ad" src="/ads/?r=' +
+            Math.floor(Math.random() * 1000) +
+            '"/>'
+        );
+      </script>
+    </header>
+
+    <section id="products">
+      <script type="text/babel" src="App.js"></script>
+    </section>
+  </body>
+</html>
