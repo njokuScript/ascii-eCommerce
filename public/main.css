@@ -21,3 +21,28 @@ header {
   top: -20px;
   color: #fff;
 }
+.loader {
+  border-top: 7px solid blue;
+  border-right: 7px solid green;
+  border-bottom: 7px solid red;
+  border-left: 7px solid pink;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 2s linear infinite;
+  margin-left: 700px;
+  margin-top: 20px;
+  text-align: center;
+}
+.loaderText {
+  text-align: center;
+  color: #041329;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
