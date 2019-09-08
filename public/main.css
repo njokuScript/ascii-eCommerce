@@ -7,6 +7,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   padding: 0;
   box-sizing: border-box;
+  background-color: darkgray;
 }
 :app {
   --mainTransition: all 0.3s linear;
@@ -30,9 +31,8 @@ header {
   width: 60px;
   height: 60px;
   animation: spin 2s linear infinite;
-  margin-left: 700px;
+  margin-left: 350px;
   margin-top: 20px;
-  text-align: center;
 }
 .loaderText {
   text-align: center;
@@ -53,14 +53,14 @@ section {
   max-width: 800px;
 }
 .sortsView {
-  background-color: #f7f8f9;
+  background-color: #fff;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: end;
   -ms-flex-pack: end;
   justify-content: flex-end;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 .sortsPane {
   padding: 5px 10px;
@@ -70,10 +70,9 @@ section {
   height: 25px;
   padding: 0 10px;
   border-radius: 3px;
-  border-color: #d4d5d6;
+  border-color: #041329;
 }
 .mainProducts {
-  background-color: #fff;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -84,6 +83,7 @@ section {
   justify-content: space-evenly;
 }
 .grid {
+  background-color: #041329;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -99,6 +99,11 @@ section {
   -ms-flex-direction: column;
   flex-direction: column;
   height: 260px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+.grid:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 .ads {
   width: 100%;
@@ -125,6 +130,7 @@ section {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
+  color:#fff;
 }
 .others {
   display: -webkit-box;

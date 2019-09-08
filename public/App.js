@@ -206,7 +206,7 @@ class App extends React.Component {
       this.fetchNew
     );
   };
-
+  //fetches new products for the page
   fetchNew = () => {
     const { page, limit, sort } = this.state;
 
@@ -228,8 +228,98 @@ class App extends React.Component {
       );
   };
 
-  render() {
-    return <div className="loader"></div>;
+    renderStateView(){
+      const { arr, adsArr, page } = this.state;
+      const renderedView = arr.map((item, index) => {
+      const { id, date, face, price, size } = item;
+      const avgCount = (index+1) / 20; 
+      const fontSize = `${size}px`; 
+       if( (avgCount % 1) === 0 ){
+          return [
+                  <div className="grid">
+                  <div className="face" style={{ fontSize }}>
+                      {face}
+                  </div>
+                  <div className="others">
+                      <div className="size">size {size}</div>
+                      <div className="price">${price/100}</div>
+                      <div className="time">{this.timeSince(date)}</div>
+                  </div>
+                  </div>,
+                  <div className="ads">
+                     <img className="ad" src={`/ads/?r=${adsArr[avgCount]}`} /> 
+                  </div>
+                  ]
+      } 
+      return ( 
+              <div className="grid">
+                  <div className="face" style={{ fontSize }}>
+                      {face}
+                  </div>
+                  <div className="others">
+                      <div className="size">size {size}</div>
+                      <div className="price">${price/100}</div>
+                      <div className="time">{this.timeSince(date)}</div>
+                  </div>
+              </div>
+      );
+  
+  
+      })
+      return renderedView
+  }
+
+  componentWillUnmount() {
+      window.removeEventListener('scroll', this.handleScroll);
+      document.removeEventListener('mousemove', this.resetIdleTimer);
+      document.removeEventListener('keypress', this.resetIdleTimer);
+  };
+
+  render(){
+      const {loading, loadingMore, lastPage, sort, idleArr } = this.state;
+
+//        console.log(idleArr);
+      if(loading){
+          return (
+              <div className="loader">
+              </div>
+          )
+      }
+      return (
+
+
+          <div className="products">
+          <div className="sortsView">
+              <div className="sortsPane">
+                  Sort By <select
+                              onChange={this.changeSort} 
+                              value={sort}
+                          >
+                              <option value="id">id</option>
+                              <option value="size">size</option>
+                              <option value="price">price</option>
+                          </select>
+              </div>
+          </div>
+
+          <div className="mainProducts">
+              {this.renderStateView()}
+              {
+                  loadingMore ? (
+                      <div className="loader">
+                      </div>  
+                  ) :  null
+              }
+              {
+                  lastPage ? (
+                      <div className="loader">
+                          ~ end of catalogue ~
+                      </div>  
+                  ) : null
+              }
+          </div>
+          </div>
+      )
   }
 }
 
