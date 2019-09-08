@@ -1,12 +1,19 @@
-Products Grid
-====
+# Products Grid
 
 This is an ecommerce site, where you can buy all sorts of ascii faces like `(ノ・∀・)ノ` and `¯_(ツ)_/¯`, in a wide variety of font sizes. The homepage should display a list of products for people to browse.
 
 Please read the instructions and FAQ below before beginning.
 
-Features
-----
+# INSTRUCTIONS ON HOW TO RUN APP IN BROWSER
+
+npm start
+Runs the app in the development mode.
+Open http://localhost:3000 to view it in the browser.
+
+The page will reload if you make edits.
+You will also see any lint errors in the console.
+
+## Features
 
 - products are displayed in a grid.
 - give the user an option to sort the products in ascending order. Can sort by "size", "price" or "id". The products list should be reloaded when a new sorting option is chosen.
@@ -16,7 +23,7 @@ Features
   - a "date" field, which is the date the product was added to the catalog. Dates should be displayed in relative time (eg. "3 days ago") unless they are older than 1 week, in which case the full date should be displayed.
 - the product grid should automatically load more items as you scroll down.
 - display an animated "loading..." message while the user waits for the data to load.
-- to improve the user's experience, we should always pre-emptively fetch the next batch of results in advance, making use of idle-time.  But they still should not be displayed until the user has scrolled to the bottom of the product grid.
+- to improve the user's experience, we should always pre-emptively fetch the next batch of results in advance, making use of idle-time. But they still should not be displayed until the user has scrolled to the bottom of the product grid.
 - when the user reaches the end and there are no more products to display, show the message "~ end of catalogue ~".
 
 ### Ads features
@@ -24,17 +31,14 @@ Features
 - after every 20 products we need to insert an advertisement from one of our sponsors. Use the same markup as the advertisement in the header shown in `public/index/html`, but make sure the `?r` query param is randomly generated each time an ad is displayed.
 - Ads should be randomly selected, but a user must never see the same ad twice in a row.
 
-
-Products API
-----
+## Products API
 
 - The basic query looks like this: `/api/products`
 - The response format is JSON.
 - To paginate results use the `_page` parameter, eg: `/api/products?_page=10&_limit=15` (returns 15 results starting from the 10th page).
 - To sort results use the `_sort` parameter, eg: `/api/products?_sort=price`. Valid sort values are `price`, `size` and `id`.
 
-FAQ
-----
+## FAQ
 
 ### How do I start the app?
 
@@ -42,7 +46,7 @@ Start with `npm start`. The server will look for any files you add to the `publi
 
 ### What libraries/frameworks, packages, tools can I use?
 
-You need to use React.js as the main js library and Git for version control, but other than that you are free to work with any package of your choice with two exceptions - you should not use any package/plugin for the *loading of products on scroll* and *formatting of dates*. We want to see how you solve problems by writing your own JS code, so using any package/plugin for the above two features will immediately make us reject your submission.
+You need to use React.js as the main js library and Git for version control, but other than that you are free to work with any package of your choice with two exceptions - you should not use any package/plugin for the _loading of products on scroll_ and _formatting of dates_. We want to see how you solve problems by writing your own JS code, so using any package/plugin for the above two features will immediately make us reject your submission.
 
 ### What about sort order (ascending / descending)?
 
