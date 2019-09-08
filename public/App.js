@@ -1,10 +1,6 @@
 class App extends React.Component {
   render() {
-    return (
-      <div>
-        <p>Hey</p>
-      </div>
-    );
+    return <div></div>;
   }
 }
 

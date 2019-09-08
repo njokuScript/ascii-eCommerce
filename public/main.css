@@ -1,0 +1,23 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+}
+:app {
+  --mainTransition: all 0.3s linear;
+  --mainSpacing: 3px;
+}
+header {
+  text-align: center;
+  border-bottom: 1px solid #041329;
+  background-color: #041329;
+  padding-bottom: 20px;
+  width: 100%;
+  top: -20px;
+  color: #fff;
+}
