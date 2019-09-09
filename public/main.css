@@ -23,13 +23,14 @@ header {
   color: #fff;
   border-bottom-left-radius: 35px;
   border-bottom-right-radius: 35px;
-  border-bottom-style: groove;
+  border-top-left-radius: 35px;
+  border-top-right-radius: 35px;
 }
 .loader {
   border-top: 7px solid blue;
   border-right: 7px solid green;
   border-bottom: 7px solid red;
-  border-left: 7px solid pink;
+  border-left: 7px solid #041329;
   border-radius: 50%;
   width: 60px;
   height: 60px;

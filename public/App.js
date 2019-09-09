@@ -14,6 +14,7 @@ class App extends React.Component {
       idleLoading: false,
       loadingMore: false
     };
+    //function binding
     this.handleScroll = this.handleScroll.bind(this);
     this.fetchMore = this.fetchMore.bind(this);
     this.changeSort = this.changeSort.bind(this);
@@ -26,10 +27,13 @@ class App extends React.Component {
   componentDidMount() {
     const { page, limit, sort } = this.state;
     this.resetIdleTimer();
+
+    //Event listeners
     document.addEventListener("mousemove", this.resetIdleTimer);
     document.addEventListener("keypress", this.resetIdleTimer);
     window.addEventListener("scroll", this.handleScroll);
 
+    //initialize new array that stores products from new page
     let newArr = [];
     for (let i = 0; i < 1000; ++i) {
       newArr[i] = i;
@@ -141,6 +145,8 @@ class App extends React.Component {
       document.documentElement.scrollTop || document.body.scrollTop;
     const scrollHeight = document.body.scrollHeight;
     const clientHeight = document.documentElement.clientHeight;
+
+    //get current height
     const currHeight = scrollTop + clientHeight;
 
     this.resetIdleTimer();
@@ -169,26 +175,24 @@ class App extends React.Component {
           .then(function(response) {
             return response.json();
           })
-          .then(
-            function(arrObj) {
-              if (arrObj[arrObj.length - 1] === undefined) {
-                this.setState({
-                  loadingMore: false,
-                  page: newPage,
-                  lastPage: true,
-                  idleArr: []
-                });
-              } else {
-                this.setState({
-                  arr: [...arr, ...arrObj],
-                  loadingMore: false,
-                  page: newPage,
-                  idleArr: [],
-                  idlePage: newPage
-                });
-              }
+          .then(function(arrObj) {
+            if (arrObj[arrObj.length - 1] === undefined) {
+              this.setState({
+                loadingMore: false,
+                page: newPage,
+                lastPage: true,
+                idleArr: []
+              });
+            } else {
+              this.setState({
+                arr: [...arr, ...arrObj],
+                loadingMore: false,
+                page: newPage,
+                idleArr: [],
+                idlePage: newPage
+              });
             }
-          );
+          });
       }
     }
     // To avoid loading more on initial loading
@@ -214,8 +218,10 @@ class App extends React.Component {
     for (let i = 0; i < 1000; ++i) {
       newArr[i] = i;
     }
+
     const newArrs = this.reArrange(newArr);
     const query = `/api/products?_page=${page}&_limit=${limit}&_sort=${sort}`;
+
     window.addEventListener("scroll", this.handleScroll);
     fetch(query)
       .then(function(response) {
@@ -277,7 +283,7 @@ class App extends React.Component {
   render() {
     const { loading, loadingMore, lastPage, sort, idleArr } = this.state;
 
-    //        console.log(idleArr);
+    //console.log(idleArr);
     if (loading) {
       return <div className="loader"></div>;
     }
