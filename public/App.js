@@ -303,7 +303,7 @@ class App extends React.Component {
         <div className="mainProducts">
           {this.renderStateView()}
           {loadingMore ? <div className="loader"></div> : null}
-          {lastPage ? <div className="loader">~ end of catalogue ~</div> : null}
+          {/* {lastPage ? <div className="loader">~ end of catalogue ~</div> : null} */}
         </div>
       </div>
     );

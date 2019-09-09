@@ -6,6 +6,9 @@ Please read the instructions and FAQ below before beginning.
 
 # INSTRUCTIONS ON HOW TO RUN APP IN BROWSER
 
+npm install
+installs all packages/dependecies inyo your local machine
+
 npm start
 Runs the app in the development mode.
 Open http://localhost:3000 to view it in the browser.
