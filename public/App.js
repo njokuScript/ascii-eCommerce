@@ -33,7 +33,7 @@ class App extends React.Component {
     document.addEventListener("keypress", this.resetIdleTimer);
     window.addEventListener("scroll", this.handleScroll);
 
-    //initialize new array that stores products from new page
+    //initialize new productId that stores products from new page
     let newArr = [];
     for (let i = 0; i < 1000; ++i) {
       newArr[i] = i;
@@ -92,19 +92,19 @@ class App extends React.Component {
     }
   };
 
-  reArrange = array => {
+  reArrange = productId => {
     // rearrange the generated  ascending unique number to achieve random value in array
-    let i = array.length,
+    let i = productId.length,
       j = 0,
       temp;
 
     while (i--) {
       j = Math.floor(Math.random() * (i + 1));
-      temp = array[i];
-      array[i] = array[j];
-      array[j] = temp;
+      temp = productId[i];
+      productId[i] = productId[j];
+      productId[j] = temp;
     }
-    return array;
+    return productId;
   };
   //creates a new date and time which will be displayed at different intervals
   timeSince = dateNew => {
