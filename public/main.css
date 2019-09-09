@@ -21,6 +21,9 @@ header {
   width: 100%;
   top: -20px;
   color: #fff;
+  border-bottom-left-radius: 35px;
+  border-bottom-right-radius: 35px;
+  border-bottom-style: groove;
 }
 .loader {
   border-top: 7px solid blue;
@@ -51,7 +54,13 @@ section {
   width: 80%;
   margin: 20px auto 0;
   max-width: 800px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
 }
+.section:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
 .sortsView {
   background-color: #fff;
   display: -webkit-box;
@@ -61,7 +70,13 @@ section {
   -ms-flex-pack: end;
   justify-content: flex-end;
   margin-bottom: 12px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
 }
+.sortsView:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
 .sortsPane {
   padding: 5px 10px;
 }
@@ -145,7 +160,13 @@ section {
   padding: 10px 15px;
   background-color: #f7f8f9;
   border-radius: 3px;
+  box-shadow: 0 12px 11px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.6s;
 }
+.others:hover {
+  box-shadow: 0 16px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
 .size {
   display: -webkit-box;
   display: -ms-flexbox;
