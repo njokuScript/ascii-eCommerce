@@ -187,7 +187,7 @@ class App extends React.Component {
                   idlePage: newPage
                 });
               }
-            }.bind(this)
+            }
           );
       }
     }

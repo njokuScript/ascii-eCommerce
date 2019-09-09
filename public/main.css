@@ -130,7 +130,7 @@ section {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  color:#fff;
+  color: #fff;
 }
 .others {
   display: -webkit-box;
