@@ -189,6 +189,7 @@ class App extends React.Component {
                 loadingMore: false,
                 page: newPage,
                 idleArr: [],
+                lastPage: false,
                 idlePage: newPage
               });
             }
@@ -303,7 +304,7 @@ class App extends React.Component {
         <div className="mainProducts">
           {this.renderStateView()}
           {loadingMore ? <div className="loader"></div> : null}
-          {/* {lastPage ? <div className="loader">~ end of catalogue ~</div> : null} */}
+          {lastPage ? <div>~End of Catalogue~</div> : null}
         </div>
       </div>
     );

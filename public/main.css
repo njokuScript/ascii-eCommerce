@@ -21,10 +21,6 @@ header {
   width: 100%;
   top: -20px;
   color: #fff;
-  border-bottom-left-radius: 35px;
-  border-bottom-right-radius: 35px;
-  border-top-left-radius: 35px;
-  border-top-right-radius: 35px;
 }
 .loader {
   border-top: 7px solid blue;
